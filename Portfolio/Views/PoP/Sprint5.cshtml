@@ -1,0 +1,109 @@
+﻿<div class="tab-pane fade active show" id="panel1" role="tabpanel">
+    <div class="py-5 mx-auto">
+        <div>
+            <h1 class="font-monospace text-center mb-5">Sprint 5</h1>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="font-monospace text-decoration-underline">Key Tasks</h2>
+            <ul>
+                <li>Fixing Card Emulator</li>
+                <li>NFC Modes</li>
+                <li>Peer-to-Peer</li>
+                <li>Talk with Dermot</li>
+                <li>Sessions</li>
+            </ul>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">Fixing Card Emulation</h2>
+            <p>
+                After retrying the same emulated card app with the reader app on a new device the code no longer crashed. When the two devices were tapped together, the reader would vibrate indicating that a message was received but the on the UI no changes had been made. When the reader app is closed and re-opened, the UI updates and a response from the emulator app is received.
+
+                <br />
+
+                I think the problem here is mainly being that the UI is never updated after the message is received. This working, allows the project to make use of a one tap interaction, and making the project possible to be compatible with self-checkout machines as well.
+            </p>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">NFC Modes</h2>
+            <p>
+                For my module, 'Research Methods' my paper was to answer, which was the most secure mode when transferring data over NFC technology. In doing this, I looked at the basics of NFC and how it worked. NFC sends data in the form of radio frequency waves. A device can be in one of two states, either active or passive. Passive devices do not require a power source as they are powered by an active device trying to pull data from them. Data can be transferred  across two NFC capable devices in three different modes:
+            </p>
+
+            <h4 class="text-secondary">Reader / Writer</h4>
+            <p>
+                For my module, 'Research Methods' my paper was to answer, which was the most secure mode when transferring data over NFC technology. In doing this, I looked at the basics of NFC and how it worked. NFC sends data in the form of radio frequency waves. A device can be in one of two states, either active or passive. Passive devices do not require a power source as they are powered by an active device trying to pull data from them. Data can be transferred  across two NFC capable devices in three different modes:
+            </p>
+
+            <h4 class="text-secondary">Card Emulation</h4>
+            <p>
+                This mode allows a device to imitate a passive device, such as a bank card. There is two different implantation possible:
+            </p>
+            <p>
+                <b>Card Emulation with a secure element:</b> A secure element are hardware components inside the device in which private information can be stored, limiting interaction with the OS.
+            </p>
+            <p>
+                <b>Host Based Card Emulation:</b> Basically a cloud-based secure element, virtual details are emulated on the device, these details are checked on mobile payment providers servers and then the real details are sent to the merchant.
+            </p>
+
+            <h4 class="text-secondary">Peer to Peer</h4>
+            <p>
+                This mode allows two devices to make a connection and send data to one another. Other names for Peer to Peer are 'P2P' or 'Wi-Fi Direct'. NFC is used to connect the two devices to one another directly over a wifi connection allowing them to send data over a fast connection.
+            </p>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">NFC Security</h2>
+            <p>
+                From the information I came across in doing my research on threats relating to NFC and the modes it works in, I found that Card Emulation with the aid of a secure element was the most secure mode for our project.
+            </p>
+            <p>
+                This mode involves the device that is sending the information to be in a passive state.
+
+                Devices operating in a passive state is found to be less susceptible against attacks. Minimizing the range of eavesdropping attacks from 10 meters for an active state down to 1 meter.
+            </p>
+            <p>
+                When using a built-in secure element, the user's data never actually leaves the device, lowering the number of people viewing the data. All the processing of the user's data is handled inside of the secure element.
+            </p>
+            <p>
+                All NFC devices make use of a protocol called 'listen-before-talk', this help devices check for interference when trying to communicate with another device.
+            </p>
+            <p>
+                It is suggested to add a secure channel in which the data can be transferred. This channel will encrypt the message using algorithms such as RSA or SHA, allowing only the intended receiver to decode the message.
+            </p>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">Peer to Peer</h2>
+            <p>
+                Decided to look into the P2P option for our project but to this point I understand that P2P is based on the same code as Android Beam which was recently discontinued for future versions of Android, starting with Android version 10 which is the most recent release.
+            </p>
+            <p>
+                P2P also requires an internet connection that is not preferable for our app. This will stop people being able to receive their receipts is they run out of data. This may limit our market.
+            </p>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">Talk with Dermot</h2>
+            <p>
+                From my looking into the modes of data transfer over NFC, I decided that card emulation was our best option, as the customer app could be in reader mode and the shop device could be in card emulation mode. The problem with this is figuring out how to update the data of the passive emulator in real time.
+            </p>
+            <p>
+                Dermot again suggested the use of Peer to Peer mode as he thought a device in passive state wont be able to be updated. We began looking into the mode and found that it is singular directional, meaning that no conversation can happen between the two devices, data is only sent one way.
+            </p>
+            <p>
+                Dermot suggested moving back to the initial idea of transferring a key over NFC and the merchant db to send the receipt information to our cloud db which the customer can interact with using their newly acquired key to pull the receipt information.
+            </p>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">Sessions</h2>
+            <p>
+                Looked into sessions on an android application. Created a Java class called session,in this class I make use of SharedPreferences, here data is stored in key-value pairs. Data is stored persistently meaning it will remain even when the app is closed. Firstly I create a SharedPreference, next a editor object, finally i put values into the editor with pair values and commit the editor. To retreive data from the SharedPreference, I must created one using the same value as the previously created one if getting data on a different activity. Next, I call preference.get__ with the key of the pair I am searching for.
+            </p>
+        </div>
+
+    </div>
+</div>

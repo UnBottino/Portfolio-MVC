@@ -1,0 +1,123 @@
+﻿<div class="tab-pane fade active show" id="panel1" role="tabpanel">
+    <div class="py-5 mx-auto">
+        <div>
+            <h1 class="font-monospace text-center mb-5">Sprint 13</h1>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="font-monospace text-decoration-underline">Key Tasks</h2>
+            <ul>
+                <li>Bio-metrics</li>
+                <li>Notifications</li>
+                <li>Search by Tag</li>
+                <li>Populating the Drawer</li>
+                <li>Location Feature</li>
+                <li>Exporting Feature</li>
+            </ul>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">Bio-metrics</h2>
+            
+            <p>Looking into fingerprint authentication. Most of the tutorials are before the deprecation of a lot of used methods such as isHardwareDetected() and hasEnrolledFingerprints().</p>
+
+            <p>Android has moved from fingerprintManager towards biometricPrompt</p>
+
+            <p>Found an example on <a href="https://developer.android.com/training/sign-in/biometric-auth" target="_blank">Show a biometric authentication dialog</a></p>
+
+            <p>This has a pre-existing ui created and resolves the deprecated problem.</p>
+
+            <p>Added the BiometricPrompt code to a function and call the function on the fragmentHolder. If fingerprint doesnt match after five attempts, the app will close.</p>
+
+            <p>Added an alternative method of authentication, using the users aditional method passcode etc.</p>
+
+            <p>Also moved the function call to onStart() so user has to authenticate on each open.</p>
+
+            <p>Found that the second method wont work with this as it sends to second page and calls onStart() on return.</p>
+
+            <p>Spent time trying to know when/how to make php calls after authentication.</p>
+
+            <p>Solved problem of receipts showing in background while authentication in process by making php calls on success. This meant moving the calls from the fragment to fragment holder, also improving speed by making less php calls on each fragment.</p>
+
+            <p>Solved problem of receipts showing in background while authentication in process on re-open of the app by clearing the recyclerView in onStop() on the receiptFragment also clearing the receiptList in the fragmentHolder in onStop() and populating it again in onStart().</p>
+
+            <p>Found that I was updating only the receipt activity ui on reopen of the app so all other pages contents would be refilled. Fixed this by removing the clear in onStop() and added a popup activty which is called onStart() of the fragmentHolder. Inside this popup, I call the biometric authentication to solve the problem of closing the new activity on authentication. Currently having problems with bluring of activity, but a white page might do. Problem with blur is that the background on the new activity always stays white and visable.</p>
+
+            <p>Decided to stick with a plain white background to cover private information to save time. Also found problems with alternative authentication method. On success, the authentication process would start again (onStart()). Removed this option and replaced it with a cancel button.</p>
+
+            <p>Found a problem that the app crashes when a fingerprint isnt set.</p>
+
+            <p>Added a check to see if a fingerprint is enrolled.</p>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">Notifications</h2>
+            
+            <p>Looked into all types of notifications and decided a plain popup would be sufficent.</p>
+
+            <p>Added a simple success notification on receiving a receipt from the NFC tap</p>
+
+            <p>Had a problem with a small icon when the notification drawer is expanded, Fixed the problem with empting the cache on both the phone and laptop.</p>
+
+            <p>On click of a notification, this opens the receipt page showing all information on the newly received receipt.(Pending intents)</p>
+
+            <p>Added a pop sound to each notification.</p>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">Search By Tag</h2>
+            
+            <p>On submit of a tag search, a tag bubble is created in a FlexboxLayout created by google.</p>
+
+            <p>On click of a tag, the tag is removed from the ui.</p>
+
+            <p>Made a function called buildSearchString() which loops through all tags on the ui list and adds each tag's text to a single string, separated by '@@'. (This is used for when a tag is clicked and removed from the list)</p>
+
+            <p>Also added functionality that clears the screen, when no results are found.</p>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">Populating the Drawer</h2>
+
+            <p>Populated the drawer with users name and email</p>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">Location Feature</h2>
+
+            <p>Pulled Sean's broken branch (LatLng) and correctly passed the values between the stages of the POS app. These values are now sent to the php cloud DB.</p>
+
+            <p>On click of the vendor name on a receipt, I pass the LatLng values to the Map activity to display the correct location.</p>
+
+            <p>I also passed the vendor name and address and these values are displayed onClick of the marker on the map.</p>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">Exporting Feature</h2>
+
+            <h4 class="text-secondary">Folder Exporting</h4>
+
+            <p>Created a asyncTask which steps through a loop of all receipts in the folder, first it inflates the receipt activity layout, next it makes a php call to get all related information for the receipt, next it populates the layout with the new information, finally it takes a screenshot of the layout and saves it to the users gallery.</p>
+
+            <p>But has a problem of cutting of some words throughout the receipt.</p>
+
+            <p>Created a class with a function similar to the in-build "MediaStore.insertImage" This function allows me to push all receipts from a folder into one album related to that folder, in the users gallery.</p>
+
+            <p>Also now all single exported receipts go into a album called "All Receipts"</p>
+
+            <p>Added check to see if permission is asked for exporting before creating the image.</p>
+
+            <p>Updated length of vendor and address temp value on receipt activity xml and set gravity to centre to solve problem of shop names and addresses being cut off during exporting.</p>
+
+            <p>Removed export button from PNG on export of a folder of receipts.</p>
+
+            <h4 class="text-secondary">PDF Exporting</h4>
+
+            <p>https://www.quora.com/What-is-the-best-way-to-convert-Bitmap-to-PDF-in-Android-programmatically</p>
+
+            <p>Updated pdf function to create a pdf document and insert the bitmap of the layout into the page. No longer exports as PNG</p>
+
+            <p>Removed the newly added buttons (png,pdf,csv) from view when exporting the screen capture of each receipt. Also added toasts to each successful attempt of exporting.</p>
+        </div>
+    </div>
+</div>

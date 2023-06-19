@@ -1,0 +1,58 @@
+﻿<div class="tab-pane fade active show" id="panel1" role="tabpanel">
+    <div class="py-5 mx-auto">
+        <div>
+            <h1 class="font-monospace text-center mb-5">Sprint 10</h1>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="font-monospace text-decoration-underline">Key Tasks</h2>
+            <ul>
+                <li>NFC Security</li>
+                <li>Updating POS Style App</li>
+                <li>Removing From SQLite</li>
+                <li>Fixing Export Feature</li>
+                <li>Drawer Functionality</li>
+            </ul>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">NFC Security</h2>
+            
+            <p>After NFC data has been transferred in from the POS app onDeactivated() is called, in this function I reset the message data to an empty string. This stops attacks from scanning the POS a second time in an attempt to steal their receipt information.</p>
+
+            <p>After NFC data is sent, the POS now goes to a new page which allows the POS to re-send the receipt data if there was a problem with the customers receiving the receipt information. Alternatively, the POS can finish the transaction and the app will return to the start page.</p>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">Updating POS</h2>
+
+            <p>Added a vendor page to the POS to allow a user to select which shop they are in, this is to allow for a wider range of receipts to demo the Pop application such as supermarket goods or high end laptops.</p>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">Removing From SQLite</h2>
+
+            <p>Had problems removing receipts from the local SQLite database on link of a receipt. Found that by deleting based on UUID was having no effect but by using a receipt ID value, the row was being dropped successfully. Instead of looking further into this, I was happy to stick with the variable change.</p>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">Fixing Export Feature</h2>
+
+            <p>Added a function to check for permission to write to external storage, if no permission a dialog is shown to request permission from the user. The function is run on click of nicks export button. Layout captures are now able to be sent to a folder on the user’s phone.</p>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">Drawer Functionality</h2>
+
+            <p>When adding logout functionality to the Pop app, I tried adding an onClick listener to an item in the drawer but had problems with this as all the tutorials I followed online wouldn’t work with our code, a click would have no effect on the app.</p>
+
+            <p>I created a toolbar for the main page to contain a hamburger icon to open the drawer, in doing so, I found the tutorial Nick used to implement the drawer and after watching I had a greater understanding of how the code and menu worked.</p>
+        
+            <p>
+                <a href="https://www.youtube.com/watch?time_continue=108&v=0WC0VU0hw2w&feature=emb_logo" target="_blank">How to create a navigation bar in android studio</a>
+            </p>
+
+            <p>I now was able to add the on click functionality and on logout the user’s session is destroyed and the user is redirected back to the login page.</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,151 @@
+﻿<div class="tab-pane fade active show" id="panel1" role="tabpanel">
+    <div class="py-5 mx-auto">
+        <div>
+            <h1 class="font-monospace text-center mb-5">Sprint 2</h1>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="font-monospace text-decoration-underline">Key Tasks</h2>
+            <ul>
+                <li>Looking into Revenue process for tax back</li>
+                <li>Team meeting</li>
+                <li>Modifying prototype</li>
+                <li>Transfer of data</li>
+                <li>Panel 1 (Talk with Gerry)</li>
+                <li>Breaking down user stories</li>
+                <li>NFC Experience</li>
+                <li>Modifications to prototype</li>
+                <li>Panel 2</li>
+            </ul>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">Revenue Process</h2>
+            
+            <p>Started to look into the process to see if the app features meet the requirements.</p>
+
+            <h4 class="text-secondary">Process:</h4>
+            <p>To add a new receipt:</p>
+            <ul>
+                <li>Choose the type of expense</li>
+                <li>Add a picture of the receipt, if you skip this, you have to keep the original for 6 years.</li>
+                <li>Add date of expense</li>
+                <li>Add description</li>
+                <li>Add amount</li>
+            </ul>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">Team Meeting</h2>
+            
+            <p>Planned for the apps pitch on the Friday coming:</p>
+            <ul>
+                <li>Made a list of all technologies we planned to use</li>
+                <li>Defined a list of all the apps requirements and ordered them using MSCW</li>
+                <li>Decided on individuals roles in the team</li>
+                <li>Started planning names for the app</li>
+            </ul>
+
+            <p>I explained the process of claiming tax back on revenue and suggested to add an export format of an image type such as jpg or png. This would allow the user to summit the proof needed and eliminate the need for the keeping of the physical receipt.</p>
+
+            <h4 class="text-secondary">My Roles</h4>
+            <p>In the meeting I decided to take the main role of controlling the data transfer between merchant and customer with the secondary role of UI design.</p>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">Prototype</h2>
+            
+            <p>After defining most of the needed and wanted requirements with the team, I tried to make a visual of some of the new ideas.</p>
+            <p>Created the flow of how the folder system would work.</p>
+
+            <h4 class="text-secondary">Folder System</h4>
+            <ul>
+                <li>In the side menu is a folders option that will show a new side menu page, containing all available folders and an add folder button at the bottom.</li>
+                <li>One of these available folders can be selected at a time and if selected, all receipts logged after will be added to this folder.</li>
+                <li>There will be a preset option of default, this will basically mean that the receipts don't belong to a folder.</li>
+                <li>In the search menu, you will be able to search by folder and export all the related receipts.</li>
+                <li>There will be a way to add a previously scanned receipt into a folder, remove a receipt from the folder or delete the whole folder without deleting the receipts inside.</li>
+            </ul>
+
+            <p>I also cleaned up the look of the app by creating a menu with options of each of the search options and adding better icons to each of the buttons throughout the app.</p>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">Transfer of data</h2>
+
+            <p>I researched how much data could be sent over a single NFC transfer and found that the limit is quite low, the max being around 8kB.</p>
+
+            <p>With this information I decided to look into other ways in which the user would be able to get their receipt. One idea i came up with was for the merchant to send the receipt information to our database and use NFC to send the receipt ID over to the customer. Once the customer has an internet connection, they use that ID to pull the receipt information from our database.</p>
+
+            <p>Looked into POS.</p>
+
+            <p>Looked into if a customer would be able to return goods if they didn't have a physical receipt but if they had the information it contained.</p>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">Panel 1 (Talk with Gerry)</h2>
+
+            <p>On the Friday, we had a small meeting in the morning to go through the PowerPoint Aoife had made for the pitch. We planned  who was gonna talk over each part and what was the most important information to get across.</p>
+
+            <p>When we went to the class, we found out that the pitch wasn't going to be for another week and that the class was gonna be used to give a quick update to the lecturers.</p>
+
+            <p>Gerry mainly spoke to us on the topic of target users, and helped us narrow the users down to customers, merchants and the user that would ask someone for receipts when handling claims for example accountants.</p>
+
+            <p>Gerry suggested getting in contact with with some users to help define requirements and to see if they would be likely to use the app.</p>
+
+            <p>Since he is a lecturer for the college and goes on trips with students, we asked him for a connection and is to get back to us.</p>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">Breaking down user stories</h2>
+
+            <p>Sean and Aoife had a small meeting and planned out some of the user stories involved in the project and added them to Scrumwize.</p>
+
+            <p>Nick and I spent some time braking down the stories further into the tasks it would take to complete them. In doing this, we spotted some problems with the features or some that would be needed to be done in a better way.</p>
+
+            <p>The main problem we spotted was in passing over the ID of the receipt and using that to pull the rest of the data from our database, an internet connection would be required. </p>
+
+            <p>If an internet connection is required to pull the information, it might be a better idea to have two databases for the app, one stored on a server by us and the second storing personal receipts on the users phone. This will allow the user to access all there receipts while they are out and about without an internet connection. </p>
+
+            <p>But the problem of returning something they just bought still remains as they would need a connection before updating their personal receipts.</p>
+
+            <p>Further research is needed to come up with alternative methods of transferring data between merchant and customer.</p>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">NFC Experience</h2>
+
+            <p>I got my hands on some NFC tags with a memory size of 5kB.</p>
+
+            <p>From testing, for the phone to scan the NFC tag, they have to be at maximum, 1 cm away from each other.</p>
+
+            <p>I downloaded some NFC read and write apps to get some experience of what the apps can do or how it works. I was able to write a URL to a tag. In scanning the tag, a browser will open and the URL will be searched. This shows that an application can be opened and a text box populated and the data to be processed.</p>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">Modifications to prototype</h2>
+
+            <p>Made some modifications to the first version of the recent transactions page.</p>
+
+            <p>From looking at the page, I felt that there was too many buttons on the screen and this would intimidate a new user. I removed the month tabs at the top of the screen as i saw that this could be done through the search menu. I also changed the idea of a paging system, limiting each page to 10 receipts to a scrolling list of all receipts. I saw this as an improvement as having to change page, slowed the user interaction down and removing the page buttons removed complexity for the user.</p>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">Modifications to prototype</h2>
+
+            <h4 class="text-secondary">Accountant Connection</h4>
+            <p>Gerry got back to us on his connection with the college accountant. He said that the person he talked to said that they were the wrong person to talk to but refereed him onto some other people. He said he would talk to them and get back to us.</p>
+
+            <h4 class="text-secondary">Cross Platform</h4>
+            <p>After the meeting with the lecturers, Dermot suggested that we look into a cross-platform framework to allow the app to be accessible on both Android and iOS. Nick and I thought about this idea but decided on making it native, starting with Android for the initial release and in the future aim towards iOS.</p>
+
+            <h4 class="text-secondary">Native</h4>
+            <p>The benefits of native is that the app will be more secure, faster and have more control over certain features.</p>
+            <ul>
+                <li>Security is important in this app as the items a user buys or even the just the brand can be personal. It is also important not to allow outsiders to gain a duplicate of the receipt as false returns would be an issue.</li>
+                <li>Speed and accessibility is important as when out and about, a user doesn't want to spend extra time loading receipts or creating longer queues in shops.</li>
+                <li>Control over NFC is important in the transfer of data between merchant and customer. In the past apple had rules on the use of NFC access, with this information we decided that the control over NFC could be tricky and is best we have the best control possible over it.</li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+﻿<div class="tab-pane fade active show" id="panel1" role="tabpanel">
+    <div class="py-5 mx-auto">
+        <div>
+            <h1 class="font-monospace text-center mb-5">Sprint 12</h1>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="font-monospace text-decoration-underline">Key Tasks</h2>
+            <ul>
+                <li>Current Folder</li>
+                <li>Fixing Problems</li>
+                <li>Related Folders</li>
+                <li>Researching Bio-metrics</li>
+            </ul>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">Current Folder</h2>
+            
+            <p>Added a item (Set Current), to the three dot drop down menu on the folder activity.</p>
+
+            <p>On click of the item, the setCurrentFolder php call is made which updates the user table with the new current folder value.</p>
+
+            <p>Also added a change to the icon inside the drawer to depict which folder is set to the current.</p>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">Fixing Problems</h2>
+            
+            <p>Fixed a problem of drawer folder items duplicating on deletion of a folder by resetting the folderList to empty before using the php call</p>
+
+            <p>Fixed problem of pressing back button after deleting a folder returning to the folder by destroying the folder activity.</p>
+
+            <p>On click of a folder item in drawer now closes the drawer before moving into the folder.</p>
+
+            <p>Cleaned up drawer style. Moved new folder to top so it no longer gets cleared once a current folder is set. a divider bar is placed between folder options and the logout item.</p>
+
+            <p>Fixed problem of current folder icon not changing in different activities on back press. (Using onResume to update the icon in all activities)</p>
+
+            <p>Fixed problem of pressing back button on home screen logging out user, it now closes the app.</p>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">Related Folders</h2>
+
+            <p>Added a new item to the toolbar on the receipt page to view a list of all related folders on click</p>
+
+            <p>Scrapped idea of using spinner and added a submenu item to the three dot menu in receipt activity <a href="https://www.youtube.com/watch?v=oh4YOj9VkVE" target="_blank">(Options Menu with Sub Items)</a> Was going to look into a pop up but decided against it.</p>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">Researching Bio-metrics</h2>
+
+            <p>Looked into different videos of people implementing fingerprint bio-metrics and started to create a new app for practice and testing different approaches.</p>
+
+            <p>Copied a GitHub project into a new project and the app used the fingerprints enrolled on the device to proceed.</p>
+        </div>
+    </div>
+</div>

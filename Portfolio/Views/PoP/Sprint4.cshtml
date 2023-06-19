@@ -1,0 +1,106 @@
+﻿<div class="tab-pane fade active show" id="panel1" role="tabpanel">
+    <div class="py-5 mx-auto">
+        <div>
+            <h1 class="font-monospace text-center mb-5">Sprint 4</h1>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="font-monospace text-decoration-underline">Key Tasks</h2>
+            <ul>
+                <li>App Logo</li>
+                <li>NFC Uses</li>
+                <li>POS System Research</li>
+                <li>Card Emulation</li>
+                <li>Card Reader / Emulator</li>
+                <li>Reader/Writer App</li>
+            </ul>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">App Logo</h2>
+
+            <ul>
+                <li>Searched google images using keywords such as virtual, bubble receipt for inspiration</li>
+                <li>Drafted a few logo ideas with pen and paper.</li>
+                <li>Using Photoshop I created a simple version one for the logo.</li>
+            </ul>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">NFC Uses</h2>
+
+            <ul>
+                <li>Verification on clothing to prove that the brand is authentic.</li>
+                <li>Medals of a fun run contain a link to a donation point on a website.</li>
+                <li>Mobile payment for public transportation to shorten queues at ticket machines.</li>
+                <li>Bill Gates has visitors IDs contain information so when they visit his mansion, the temperature and lighting conditions adjust according to their demographic.</li>
+                <li>Loyalty cards can be used to track customer preference,offer discounts and target better advertisements or promotions.</li>
+                <li>There exists a company called MClear that has created a wearable ring for easier, faster interaction.</li>
+            </ul>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">POS system Research</h2>
+
+            <p>
+                Looked into what a POS system was as i had no prior knowledge of this. Found that it was a piece of software on a computer to mimic a cash register or till to help merchants manage sales, customers, and inventory.
+            </p>
+
+            <p>A POS system has many parts:</p>
+
+            <ul>
+                <li>Monitor</li>
+                <li>Cash Drawer</li>
+                <li>Barcode Scanner</li>
+                <li>Card Reader</li>
+                <li>Receipt Printer</li>
+            </ul>
+
+            <p>
+                Began looking into what format data is transferred between the software and each component. Example: Data being sent to the Receipt printer and found that each component connects to the computer running the POS system with the use of drivers.
+            </p>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">Card Emulation</h2>
+
+            <p>
+                When researching the data transfer between NFC capable devices, I initially focused on the use of tags but in my searching I found that a Card Emulation mode was possible. Card Emulation allows a mobile phone to act as a contactless bank card or transport ticket. This then allows the mobile phone to communicate with the card reader (another NFC capable device).
+            </p>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">Card Reader / Emulator</h2>
+
+            <p>
+                I began looking into example code for card readers and a device in card emulation mode. Found an easy example online but the code was created using Kotlin.
+            </p>
+        
+            <p>
+                Link: 
+                <a href="https://medium.com/the-almanac/how-to-build-a-simple-smart-card-emulator-reader-for-android-7975fae4040f" target="_blank">How to build a simple smart card emulator reader for android</a>
+            </p>
+
+            <p>
+                I tried converting the Kotlin to Java as to make implementation easier when incorporating it into our project. When I Struggled to convert the code my self, I searched google to functions doing similar tasks wrote in Java and called them in their stead. An example of this is when the code was creating the function 'toHex'. I was able to create the card reader app but struggled with some of the conversion with the emulator.
+            </p>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">Card Reader / Emulator</h2>
+
+            <p>
+                Since I wasn't able to get the card emulation working I decided to look into alternative solutions, involving the use of NFC tags. I found a youtube series which helped me build a simple application that allowed me to write to an NFC tag and change mode to read and pull the String of the tag.
+            </p>
+
+            <p>
+                Link:
+                <a href="https://youtu.be/OxXE7bScRZs" target="_blank">How to create an NFC enabled application</a>
+            </p>
+
+            <p>
+                This provides me with a possible solution for the team, as it allows me to get data from the POS system onto a device and transfer that data over NFC to the customer but this is not an optimal approach as it requires the use of a merchant and involves two taps, slowing down the process. This won't either work in a self-checkout environment, cutting back on our possible market.
+            </p>
+        </div>
+    </div>
+</div>

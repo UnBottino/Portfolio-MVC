@@ -1,0 +1,156 @@
+﻿@{
+    ViewData["Title"] = "Projects Index Page";
+}
+
+<div class="container-fluid" style="max-height: 100vh;
+  overflow-y: scroll;
+  border: 1px solid gray;
+  scroll-snap-type: y proximity;">
+    <section style="scroll-snap-align: start;">
+        <div id="title" class="row min-vh-100">
+            <div class="col-12 my-auto">
+                <h1 class="display-4 fw-bold text-decoration-underline font-monospace text-center my-5">My Projects</h1>
+                <div class="text-center">
+                    <a id="explore" href="#pop">
+                        <div class="py-3 px-5 bg-primary btn border-3 border-1 border-dark rounded-pill">
+                            <h4 class="my-auto text-white">Explore</h4>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pop-section" style="scroll-snap-align: start;">
+        <div id="pop" class="row min-vh-100 align-items-center" style="background: rgb(255,255,255);
+background: linear-gradient(354deg, rgba(255,255,255,1) 0%, rgba(249,209,83,1) 100%);">
+            <div class="col">
+                <div class="container">
+                    <div class="row align-items-center justify-content-center mb-5">
+                        <div class="col-lg-4 col-sm-6 me-lg-5">
+                            <img src="~/img/Pop/pop_logo.png" class="rounded-circle w-100" />
+                        </div>
+                        <div class="col-lg-6 col-sm-6 my-auto ms-lg-5">
+                            <h1 class="display-4 fw-bold font-monospace text-decoration-underline">Pop</h1>
+                            <h4 class="ms-4">An Android Application that virtualises the storage, organisation and sharing of receipts using NFC technology.</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="container">
+                        <div class="row align-items-center justify-content-center">
+                            <img src="~/img/Logos/android-studio-Logo.svg" class="col-lg-1 col-sm-2" />
+                            <img src="~/img/Logos/sqlite.png" class="col-lg-1 col-sm-2" />
+                            <img src="~/img/Logos/php_logo.png" class="col-lg-1 col-sm-2" />
+                            <img src="~/img/Logos/psql_logo.png" class="col-lg-1 col-sm-2" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="wallagram-section" style="scroll-snap-align: start;">
+        <div id="wallagram" class="row min-vh-100 align-items-center" style="background: rgb(255,255,255);
+background: linear-gradient(354deg, rgba(255,255,255,1) 0%, rgba(173,109,251,1) 100%);">
+            <div class="col">
+                <div class="container">
+                    <div class="row justify-content-center mb-5">
+                        <div class="col-lg-4 col-sm-6 me-lg-5">
+                            <img src="~/img/Wallagram/walla_logo.png" class="rounded-circle w-100" />
+                        </div>
+                        <div class="col-lg-6 col-sm-6 my-auto ms-lg-5">
+                            <h1 class="display-4 fw-bold font-monospace text-decoration-underline">Wallagram</h1>
+                            <h4 class="ms-4">An android app that Allows a user to insert a subreddit from reddit.com and a post will be set as the users wallpaper.</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <img src="~/img/Logos/android-studio.svg" class="col-lg-1 col-sm-2" />
+                            <img src="~/img/Logos/sqlite.png" class="col-lg-1 col-sm-2" />
+                            <img src="~/img/Logos/firebase.png" class="col-lg-1 col-sm-2" />
+                            <img src="~/img/Logos/python.png" class="col-lg-1 col-sm-2" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="duhknow-section" style="scroll-snap-align: start;">
+        <div id="duhknow" class="row min-vh-100 align-items-center" style="scroll-snap-type:y proximity; background: rgb(255,255,255);
+background: linear-gradient(354deg, rgba(255,255,255,1) 0%, rgba(100,23,133,1) 100%);">
+            <div class="col">
+                <div class="container">
+                    <div class="row align-items-center justify-content-center mb-5">
+                        <div class="col-lg-4 col-sm-6 me-lg-5">
+                            <img src="~/img/Duhknow/duhknow_logo.png" class="rounded-circle w-100" />
+                        </div>
+                        <div class="col-lg-6 col-sm-6 my-auto ms-lg-5">
+                            <h1 class="display-4 fw-bold font-monospace text-decoration-underline">Small Projects</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="container">
+                        <div class="row align-items-center justify-content-center">
+                            <img src="~/img/Logos/kasa.png" class="col-lg-1 col-sm-2" />
+                            <img src="~/img/Logos/password-manager.png" class="col-lg-1 col-sm-2" />
+                            <img src="~/img/Logos/clock.png" class="col-lg-1 col-sm-2" />
+                            <img src="~/img/Logos/recipe-book.png" class="col-lg-1 col-sm-2" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="duhknow-section" style="scroll-snap-align: start;">
+        <div id="duhknow" class="row min-vh-100 align-items-center" style="scroll-snap-type:y proximity; background: rgb(255,255,255);
+background: linear-gradient(354deg, rgba(255,255,255,1) 0%, rgba(100,23,133,1) 100%);">
+            <div class="col">
+                <div class="container">
+                    <div class="row align-items-center justify-content-center mb-5">
+                        <div class="col-lg-4 col-sm-6 me-lg-5">
+                            <img src="~/img/Duhknow/duhknow_logo.png" class="rounded-circle w-100" />
+                        </div>
+                        <div class="col-lg-6 col-sm-6 my-auto ms-lg-5">
+                            <h1 class="display-4 fw-bold font-monospace text-decoration-underline">Duhknow</h1>
+                            <h4 class="ms-4">A website based language learning game.</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="container">
+                        <div class="row align-items-center justify-content-center">
+                            <img src="~/img/Logos/php.png" class="col-lg-1 col-sm-2" />
+                            <img src="~/img/Logos/html.png" class="col-lg-1 col-sm-2" />
+                            <img src="~/img/Logos/mysql.png" class="col-lg-1 col-sm-2" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+    window.addEventListener("DOMContentLoaded", (event) => {
+        $('#wallagram-section').click(function () {
+            window.location.href = '@Url.Action("Wallagram", "Projects")';
+            return false;
+        });
+
+        $('#pop-section').click(function () {
+            window.location.href = '@Url.Action("Pop", "Projects")';
+            return false;
+        });
+
+        $('#duhknow-section').click(function () {
+            window.location.href = '@Url.Action("Duhknow", "Projects")';
+            return false;
+        });
+    });
+</script>

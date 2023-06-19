@@ -1,0 +1,70 @@
+﻿<div class="tab-pane fade active show" id="panel1" role="tabpanel">
+    <div class="py-5 mx-auto">
+        <div>
+            <h1 class="font-monospace text-center mb-5">Sprint 3</h1>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="font-monospace text-decoration-underline">Key Tasks</h2>
+            <ul>
+                <li>Login and Register pages</li>
+                <li>All Receipts page</li>
+                <li>Meeting the panel</li>
+            </ul>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">Register System</h2>
+            
+            <p>I started by creating a simple Xml page asking for the input of a username, email, password and to type the password again to confirm.</p>
+            <p>The confirm password helps reduce the number of password change requests as it reduces error of inputting the wrong password on creation of the account.</p>
+
+            <p>On submit:</p>
+            <ul>
+                <li>The username is checked for uniqueness</li>
+                <li>The email is checked for uniqueness and that it is in the email format</li>
+                <li>The password most contain a lowercase, uppercase, numeric and be at least 8 characters long and match the value of confirm password.</li>
+                <li>The password is hashed and all information is sent to the database and the user is sent to the recent transactions page.</li>
+            </ul>
+
+            <p>Next, I created some error messages for the validation of the inputs, initially if an error was found, a error text box was populated but i changed this to show a pop up message on screen, also known as a toast. This help to give the user the tips they need to continue, while allowing the user interface to stay clean and less cluttered.</p>
+            <p>On first entering the registration page, the submit button is disabled, I created a function to enable the button once all input buttons contain a value. This helps to reduce the number of accidental account created.</p>
+            <p>I also create a link back to the login page to allow users to travel between, if they already have an account.</p>
+            <p>Finally, I added hashing of the password to insure that it is not visible to anyone. I use MD5 to hash the password, firstly I create a MessageDigest instance in java and add the password in byte form to the instance. Next, I get the hash's bytes and convert the byte[] into a hexadecimal String. This hexadecimal String is the stored password.</p>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">Login System</h2>
+
+            <h4 class="text-secondary">Research</h4>
+            <p>I began by looking into examples of a login system on android and found out that there is a pre built in activity in android studio. I started using it but found it very complex and didn't understand it. I decided to scrap the built in activity and build my own, slowly adding the more important parts as i learn more about the techniques used.</p>
+
+            <h4 class="text-secondary">Login</h4>
+            <ul>
+                <li>I start by creating a simple Xml page with two input boxes for the email and password and a submit button below.</li>
+                <li>I pulled the data from the inputs when the button is submitted and check the database for the email entered, if the user is found, i hash the password and check it against the stored password in the database. If this all matches up, i redirect the user to the recent transactions page.</li>
+                <li>I added some validation to the input boxes to populate an error message text box on screen if the details don't match.</li>
+                <li>I added a link to the registration activity to allow users to set up a new account.</li>
+                <li> also created a security feature that disables the submit button after five invalid attempts at a password.</li>
+            </ul>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">All Receipts page</h2>
+
+            <p>
+                Created a simple XML for the page containing all a users receipts. This involved the addition of a RecyclerView to allow the list of all receipts to be scroll-able on screen. For the view to be populated, this required a ReceiptListAdapter to be created. A list containing all the users receipts are added to the ReceiptListAdapter. The Adapter then uses the information in the receipts to populated the views inside of the RecyclerView.
+            </p>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">Meeting with a panel</h2>
+
+            <h4 class="text-secondary">Researching NFC</h4>
+            <p>Enda spoke to me on how I would research NFC further, he suggested I look into the ways NFC are being used today and other variations of NFC such as RFID.</p>
+
+            <h4 class="text-secondary">Finding a connection</h4>
+            <p>Gerry told us that he found a connection and would email them while cc'ing us in the email so that would could being talking and planning a meeting.</p>
+        </div>
+    </div>
+</div>

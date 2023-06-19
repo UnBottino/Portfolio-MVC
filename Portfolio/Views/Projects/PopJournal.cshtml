@@ -1,0 +1,66 @@
+﻿@{
+    ViewData["Title"] = "Pop Journal Page";
+}
+
+<div class="container-fluid" style="padding-top:15vh;">
+    
+
+
+    <div id="title" class="row d-flex justify-content-center">
+        <div class="col-2 col-lg-1">
+            <div class="position-fixed top-50" style="transform: translate(0%, -50%);">
+                <ul class="nav nav-pills list-group">
+                    <li class="nav-item">
+                        <button id="Sprint1" class="nav-link active mx-auto">Sprint 1</button>
+                    </li>
+
+                    @for (int i = 2; i <= 13; i++)
+                    {
+                        if (i == 6)
+                        {
+                            <li class="nav-item">
+                                <button id="Sprint6To8" class="nav-link mx-auto">Sprint 6-8</button>
+                            </li>
+
+                            i = 8;
+                            continue;
+                        }
+
+                        <li class="nav-item">
+                            <button id="Sprint@(i)" class="nav-link mx-auto">Sprint @i</button>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+        <div class="col-10 w-75 px-5">
+            <div id="tabContent" class="tab-content">
+                @Html.Partial("~/Views/PoP/Sprint1.cshtml")
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(".nav button").on("click", function(){
+            $(".nav button").removeClass("active");
+            $(this).addClass("active");
+
+            var page = $(this).attr('id');
+
+            $.get("@Url.Action("GetModule","PoP")", { partialName: page }, function (data) {
+                $("#tabContent").html(data);
+            });
+
+            var scrollToTop = () => {
+                var c = document.documentElement.scrollTop || document.body.scrollTop;
+                if (c > 0) {
+                    window.requestAnimationFrame(scrollToTop);
+                    window.scrollTo(0, c - c / 8);
+                }
+            };
+            scrollToTop();
+        });
+    </script>
+}

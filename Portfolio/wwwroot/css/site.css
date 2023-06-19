@@ -1,0 +1,64 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.middle {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.mouse {
+    width: 34px;
+    height: 58px;
+    border: 3px solid #ac72f6;
+    border-radius: 60px;
+}
+
+    .mouse::before {
+        content: '';
+        width: 7px;
+        height: 7px;
+        position: absolute;
+        background-color: #ac72f6;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 50%;
+        opacity: 1;
+        animation: mouse 2s infinite;
+    }
+
+@keyframes mouse {
+    0% {
+        opacity: 0;
+        top: 10px;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        top: 40px;
+    }
+}

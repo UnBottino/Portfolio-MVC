@@ -1,0 +1,278 @@
+﻿@{
+    ViewData["Title"] = "Wallagram Project Page";
+}
+
+<div class="container">
+    <div class="col">
+        @* Logo *@
+        <div class="container d-flex align-items-center" style="height: 100vh;">
+            <div class="col">
+                <div class="row py-5">
+                    <img src="~/img/Wallagram/walla_logo.png" class="rounded-circle w-25 d-flex mx-auto my-3" />
+                    <h1 class="text-center">Wallagram</h1>
+                </div>
+                <div class="row">
+                    <p class="text-center fs-5">Wallagram is an Android application that allows users to update their phones Home screen / Lock screen wallpaper periodically from posts on their favourite subreddit.</p>
+                </div>
+
+                <div id="scroll" class="position-relative my-5">
+                    <div class="middle">
+                        <div class="mouse mx-auto mb-2">
+                        </div>
+                        <h4 class="text-center" style="color: #ac72f6">Scroll</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @* How it works *@
+        <div id="reveal" class="container d-flex align-items-center my-5" style="opacity: 0">
+            <div class="col d-flex flex-column justify-content-between">
+                <div class="row text-center my-4">
+                    <h1 class="text-decoration-underline" style="color: #fcd542;">How it works</h1>
+
+                    <div class="my-3">
+                        <p class="text-center">On the apps homescreen, a search bar allows the user to enter the name of a subreddit. On search, an android PeriodicWorkRequest is set to run.</p>
+
+                        <p class="text-center">Next a work manager is created and the the work request is enqueued.</p>
+
+                        <p class="text-center">Firstly the subreddit logo is retrieved and displayed on the app's main screen. Next, a Url is built to retreive the subreddits posts and a JsonObject is returned.'</p>
+
+                        <p class="text-center">This JsonObject is then processed as there are many differnet types of Reddit posts. A post can be text only, contain a video, a gallery of many images or just a single image. Posts are checked to contain an image, if the post contains a gallery of many images, a random image is chosen.</p>
+
+                        <p class="text-center">An image name is created and all important information is stored to ensure that the same subreddit to searched each time until the user changes the input.</p>
+
+                        <p class="text-center">The image is then processed to match the resolution of the phone's display and the wallpaper is set.</p>
+
+                        <a href="https://github.com/UnBottino/WallaGram/blob/Reddit/app/src/main/java/com/wallagram/Workers/FindNewRedditPostWorker.java" target="_blank">
+                            <div class="mx-auto btn btn-primary shadow py-3 my-4" style="width:275px">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="white" class="bi bi-file-code" viewBox="0 0 16 16">
+                                    <path d="M6.646 5.646a.5.5 0 1 1 .708.708L5.707 8l1.647 1.646a.5.5 0 0 1-.708.708l-2-2a.5.5 0 0 1 0-.708l2-2zm2.708 0a.5.5 0 1 0-.708.708L10.293 8 8.646 9.646a.5.5 0 0 0 .708.708l2-2a.5.5 0 0 0 0-.708l-2-2z" />
+                                    <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z" />
+                                </svg>
+
+                                <p class="fw-bold text-light m-0 mt-1">FindNewRedditPostWorker.java</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @* Suggestions *@
+        <div class="container d-flex align-items-center my-4">
+            <div class="col d-flex flex-column justify-content-between">
+                <div class="row text-center my-4">
+                    <h1 class="text-decoration-underline" style="color: #fcd542;">Suggestions</h1>
+                    <div class="my-2">
+                        <div class="row mb-3">
+                            <div class="col-sm-8 col-lg-10 my-auto">
+                                <p class="my-auto">On toggle of the light-bulb icon, a suggestion menu of Reddit accounts are shown. As Reddit has a variety of post types (Images, videos, text etc), I have suggested a few subreddits that post pleasing images that would work as a phone wallpaper.</p>
+                            </div>
+                            <div class="col-sm-4 col-lg-2 d-flex">
+                                <img src="~/img/Wallagram/bulb.png" class="w-50 m-auto" />
+                            </div>
+                        </div>
+
+                        <div class="row my-3">
+                            <div class="row col-lg-6 my-sm-2 m-auto">
+
+                                <div class="col-sm-8">
+                                    <h4 class="text-secondary">AWS RDS</h4>
+
+                                    <p>Firstly I created a AWS RDS database instance. This database was used to store the needed values (Name and Icon image Url) to suggest Reddit accounts to a user. Then I created an AWS lambda function using python to retreive the suggestions in a Json list.</p>
+
+                                    <p>As AWS is a paid service, I began to look into other alternatives.</p>
+                                </div>
+
+                                <div class="col-sm-4 d-flex">
+                                    <img src="~/img/Logos/aws.png" class="w-100 m-auto" />
+                                </div>
+                            </div>
+
+                            <div class="row col-lg-6 my-sm-2 m-auto">
+                        
+                                <div class="col-sm-8 m-auto">
+                                    <h4 class="text-secondary">Firebase</h4>
+
+                                    <p>A friend suggested the use of Firebase as it is free to use and easily implemented. I created a Firestore database and added a suggestions collection (table). Next I added the Firebase dependancies in android studio and used the built in functions to retreive the data.</p>
+                                </div>
+                                <div class="col-sm-4 d-flex">
+                                    <img src="~/img/Logos/firebase.png" class="w-50 m-auto" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <h4 class="text-secondary">Updating suggestions</h4>
+                            <p>To keep suggestions fresh, I created a python script to read suggestions from a text file and update the firestore database. As suggestions are loaded from the database on app open, everyone's suggestions will stay up-to-date.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @* Scraping *@
+        <div class="container my-4">
+            <div class="col d-flex flex-column justify-content-between">
+                <div class="row text-center my-3">
+                    <h1 class="text-decoration-underline" style="color: #fcd542;">Scraping</h1>
+
+                    <div class="row d-flex">
+                        <div class="col-2 m-auto">
+                            <img src="~/img/Logos/insta.png" style="width: 100px" />
+                        </div>
+
+                        <div class="col-8 m-auto px-5">
+                            <p class="text-center my-3">Instagram was the initial choice for Wallagram. A scraping Url was built into the app and the returned Json would  be parse for the needed information. Over the space of a year, the Url formatting changed multiple times breaking the app each time. Instagram also added a redirect to the login page, forcing an instagram login on the wallagram app. This is when I decided to change to Reddit.</p>
+
+                            <p class="text-center">On Reddit, I created the Wallagram subreddit to allow a personalisable experience for the users. I populated this subreddit by creating a script to read in a list of accounts from a text file and using python to scrap Instagram for the account most recent post. The important information is saved and using the Reddit Api, I create a new post on the Wallagram subreddit.</p>
+
+                            <a href="https://github.com/UnBottino/insta_scraper/blob/main/script.py" target="_blank">
+                                <div class="mx-auto btn btn-primary shadow py-3 my-4" style="width:275px">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="white" class="bi bi-file-code" viewBox="0 0 16 16">
+                                        <path d="M6.646 5.646a.5.5 0 1 1 .708.708L5.707 8l1.647 1.646a.5.5 0 0 1-.708.708l-2-2a.5.5 0 0 1 0-.708l2-2zm2.708 0a.5.5 0 1 0-.708.708L10.293 8 8.646 9.646a.5.5 0 0 0 .708.708l2-2a.5.5 0 0 0 0-.708l-2-2z" />
+                                        <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z" />
+                                    </svg>
+
+                                    <p class="fw-bold text-light m-0 mt-1">insta-scrapper.py</p>
+                                </div>
+                            </a>
+
+                            <p class="text-center mt-3">To keep the subreddit fresh, I used the Task Scheduler app to run the script every 4 hours.</p>
+                        </div>
+
+                        <div class="col-2 m-auto">
+                            <img src="~/img/Logos/reddit.png" style="width: 100px" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @* Walkthrough *@
+        <div class="container d-flex align-items-center my-4">
+            <div class="col d-flex flex-column justify-content-between">
+                <div class="row text-center my-4">
+                    <h1 class="text-decoration-underline" style="color: #fcd542;">Walkthrough</h1>
+
+                    <div id="carouselExampleIndicators" class="mt-4  carousel text-white slide rounded rounded-3" style="background-color: #537bf9;" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                        </div>
+
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="row w-75 d-flex mx-auto m-5">
+                                    <div class="col-5 d-flex justify-content-center"><img src="~/img/Wallagram/Carousel/home-light.png" class="d-block w-75"></div>
+                                    <div class="col-7 text-center my-auto">
+                                        <h4 class="text-decoration-underline">Main screen</h4>
+                                        <p class="fs-5">Search for subreddits or choose from your previous selections</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">
+                                <div class="row w-75 d-flex mx-auto m-5">
+                                    <div class="col-5 d-flex justify-content-center"><img src="~/img/Wallagram/Carousel/suggestions.png" class="d-block w-75"></div>
+                                    <div class="col-7 text-center my-auto">
+                                        <h4 class="text-decoration-underline">Suggestions</h4>
+                                        <p class="fs-5">Click on the light-bulb icon to reveal a scrollable list of suggested subreddits</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">
+                                <div class="row w-75 d-flex mx-auto m-5">
+                                    <div class="col-5 d-flex justify-content-center"><img src="~/img/Wallagram/Carousel/settings.png" class="d-block w-75"></div>
+                                    <div class="col-7 text-center my-auto">
+                                        <h4 class="text-decoration-underline">Settings</h4>
+                                        <p class="fs-5">Multiple options are available to customize your preferences</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">
+                                <div class="row w-75 d-flex mx-auto m-5">
+                                    <div class="col-5 d-flex justify-content-center"><img src="~/img/Wallagram/Carousel/settings-info.png" class="d-block w-75"></div>
+                                    <div class="col-7 text-center my-auto">
+                                        <h4 class="text-decoration-underline">Setting Info</h4>
+                                        <p class="fs-5">Clicking the Info icon to the right of each settings explains what that setting does.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @* Links *@
+        <div class="container my-5 py-3">
+            <div class="col d-flex flex-column justify-content-between">
+                <div class="row text-center">
+                    <h1 class="text-decoration-underline" style="color: #fcd542;">Links & Resources</h1>
+                </div>
+
+                <div class="row w-75 mx-auto my-5">
+                    <a href="https://github.com/UnBottino/WallaGram/tree/Reddit" target="_blank" class="col-3 text-decoration-none text-black">
+                        <div class="row mb-3">
+                            <img src="~/img/Logos/github.png" class="mx-auto" style="width: 125px;" />
+                        </div>
+                        <div class="row">
+                            <h4 class="text-center">Wallagram Repo</h4>
+                        </div>
+                    </a>
+
+                    <a href="https://play.google.com/store/apps/details?id=com.wallagram" target="_blank" class="col-3 text-decoration-none text-black">
+                        <div class="row mb-3">
+                            <img src="~/img/Logos/google-play.png" class="mx-auto" style="width: 125px;" />
+                        </div>
+                        <div class="row">
+                            <h4 class="text-center">Google Play</h4>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/UnBottino/insta_scraper" target="_blank" class="col-3 text-decoration-none text-black">
+                        <div class="row mb-3">
+                            <img src="~/img/Logos/github.png" class="mx-auto" style="width: 125px;" />
+                        </div>
+                        <div class="row">
+                            <h4 class="text-center">insta-scraper Repo</h4>
+                        </div>
+                    </a>
+
+                    <a href="https://www.reddit.com/r/wallagram/" target="_blank" class="col-3 text-decoration-none text-black">
+                        <div class="row mb-3">
+                            <img src="~/img/Logos/reddit.png" class="mx-auto" style="width: 125px;" />
+                        </div>
+                        <div class="row">
+                            <h4 class="text-center">Wallagram Subreddit</h4>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        window.addEventListener("scroll", function () {
+            $("#scroll").animate({ opacity: '0' }, 100);
+            $("#reveal").animate({ opacity: '1' }, 500);
+        });
+    </script>
+}

@@ -1,0 +1,57 @@
+﻿<div class="tab-pane fade active show" id="panel1" role="tabpanel">
+    <div class="py-5 mx-auto">
+        <div>
+            <h1 class="font-monospace text-center mb-5">Sprint 9</h1>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="font-monospace text-decoration-underline">Key Tasks</h2>
+            <ul>
+                <li>Implementing NFC with PoP</li>
+                <li>POS style app</li>
+                <li>Fixing NFC Problems</li>
+            </ul>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">Implementing NFC with PoP</h2>
+            
+            <p>Added code to work with the existing Pop code</p>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">POS Style App</h2>
+            
+            <p>This included:</p>
+            <ul>
+                <li>A button to start shopping</li>
+                <li>A page with items to choose between, each having their own price. Once an item is clicked, the item and price would be added to a list underneath all available items. At the bottom of the page was a checkout button.</li>
+                <li>Created a Checkout page to ask for payment method, a printOption page to ask user which receipt type they would like.</li>
+                <li>Created a Scan page which would hold all the values from the users shopping process and make the app available to be tapped.</li>
+                <li>Created an item class in the project, which allowed me to pass an arraylist of all items to the final page.</li>
+                <li>Added functionality to itemList to not contain duplicate items but instead to increment the quantity value connected.</li>
+                <li>Added the UUID creation (Look at code)</li>
+            </ul>
+
+            <p>Added emulator functionality to the POS style app.</p>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">Fixing NFC Problems</h2>
+
+            <p>Found a problem of an NFC connection needing two taps to complete a transfer of data. Found that the problem was that both apps were using the same AID to talk to one another, this means a phone with both apps would present the user with a popup asking which app they would like to continue the transfer with, the solution was to uninstall the second app from the phone.</p>
+
+            <p>Found that the message being sent across the NFC connection needed to be in a Hexadecimal state, this was the reason the message would no longer send when changing from “9000”.</p>
+
+            <p>Also found that changing the AID on app in all places would fix the problem of devices no longer cooperating.</p>
+
+            <p>Being able to send custom messages across devices, I found that the limit was around 550 characters. This showed that sending a long receipt across NFC wouldn’t work and use of the cloud database was necessary.</p>
+
+            <p>With this, we decided to send basic information across the NFC interaction (Vendor name, cost, date, UUID) and upload a all receipt information to the cloud database.</p>
+
+            <p>Now that the data was being transferred, I found that the information was never being removed from the POS (Security problem), so if a second user tapped before stepping through a second purchase, they would receive user one’s information.</p>
+
+            <p>On Pop app, after NFC data is received, the UI is updated with a new receipt object which is populated with the information received from the NFC.</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+﻿<div class="tab-pane fade active show" id="panel1" role="tabpanel">
+    <div class="py-5 mx-auto">
+        <div>
+            <h1 class="font-monospace text-center mb-5">Sprint 11</h1>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="font-monospace text-decoration-underline">Key Tasks</h2>
+            <ul>
+                <li>Folder System</li>
+                <li>Updating Receipts</li>
+            </ul>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">Folder System</h2>
+            
+            <p>Added a new item in the drawer called “Add Folder” and on click of this would create a pop-up dialog on screen. This asked for user input and click of “create”, the folder is checked against existent folders for a duplicate name then added to the cloud db. Finally, the folder is added to the drawer.</p>
+
+            <p>On open of the app, a php call is made for all folders related to the user and each of the folders are the added to the drawer.</p>
+
+            <p>On click of a folder inside the drawer, the folder page is open showing all linked receipts.</p>
+
+            <p>Created a pop-up menu on long press of a receipt in the main page list, this pop-up has three options, “View receipt”, “Add to folder” and “Delete receipt”</p>
+
+            <p>Created a modal that is shown when the add to folder button is clicked. This modal is populated with all the user’s folders.</p>
+
+            <p>Created a function to remove a receipt from a user’s account, this in turn also removes the receipt from the UI. (Receipt doesn’t get removed from the cloud DB but a visibility value is changed from a 1 to a 0). On click of the delete receipt button, a warning pop-up is displayed.</p>
+
+            <p>Created new functionality of on long press of a receipt inside a folder, the user can either view or remove the receipt from the folder.</p>
+
+            <p>Added functionality of the deletion of a folder. Added a three-dot menu on the toolbar of the folder page. In this menu, the user can delete this folder from their account. If there are current receipts in the folder, all receipts will be unlinked from the folder and not deleted. On click of this button shows a warning pop-up dialog. On deletion, the user is returned to the main page. On return to the main page, the folder items inside the drawer were being duplicated, to fix this I set the folderList to empty before each call. I also tried to add a long click listener to the items inside the drawer, but this functionality is not available.</p>
+        </div>
+
+        <div class="mb-5">
+            <h2 class="text-primary font-monospace text-decoration-underline">Updating Receipts</h2>
+            
+            <p>Added a back button to the single receipt page to help the app flow between activities</p>
+
+            <p>I updated the POS to contain additional values such as cashier, address, barcode number, store id. This help to give the receipt a more real look and sense of professionalism to the app.</p>
+        </div>
+    </div>
+</div>

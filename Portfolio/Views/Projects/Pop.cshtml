@@ -1,0 +1,284 @@
+﻿@{
+    ViewData["Title"] = "Pop Project Page";
+}
+
+<div class="container-fluid">
+    <div class="col">
+
+        @* Logo *@
+        <div class="container min-vh-100 d-flex align-items-center">
+            <div class="col mt-5">
+                <div class="row py-5 mt-5">
+                    <img src="~/img/Pop/pop_logo.png" class="rounded-circle w-auto d-flex mx-auto" />
+                    <h1 class="text-center">Pay. Tap. <b style="color:#fcd542">PoP.</b></h1>
+                </div>
+                <div class="row py-5">
+                    <p class="text-center fs-5">PoP (Proof of Purchase) is an Android Application that virtualises the storage, organisation and sharing of receipts using NFC technology. PoP aims to help users 'future proof' their receipt management process in a digital era, with fast and easy in-app features.</p>
+                </div>
+                <div class="row py-5">
+                        <div class="col">
+                            <div class="row mb-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="grey" class="bi bi-phone-fill" viewBox="0 0 16 16">
+                                    <path d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V2zm6 11a1 1 0 1 0-2 0 1 1 0 0 0 2 0z" />
+                                </svg>
+                            </div>
+                            <div class="row text-center">
+                                <h2>Collect</h2>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row mb-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="#fcd542" class="bi bi-folder-fill" viewBox="0 0 16 16">
+                                    <path d="M9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.825a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31L.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3zm-8.322.12C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139z" />
+                                </svg>
+                            </div>
+                            <div class="row text-center">
+                                <h2>Organise</h2>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row mb-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="black" class="bi bi-share-fill" viewBox="0 0 16 16">
+                                    <path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z" />
+                                </svg>
+                            </div>
+                            <div class="row text-center">
+                                <h2>Share</h2>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        @* What is PoP *@
+        <div class="container d-flex align-items-center my-5">
+            <div class="col d-flex flex-column justify-content-between">
+                <div class="row text-center">
+                    <h1 class="text-decoration-underline my-4" style="color: #fcd542;">What is PoP</h1>
+
+                    <div class="my-3">
+                        <p class="text-center">
+                            Proof of Purchase (PoP) is an android application aiming to provide an alternative to the production of paper receipts. By creating a virtual receipt for customers at the point of purchase, the tap, or “PoP” interaction will send the receipt via NFC (Near Field Communication) from the POS System (The location of purchase) to the customer’s mobile phone.
+                        </p>
+                        <p class="text-center">
+                            Important receipt information is sent to customer via NFC. When/If internet connection is available, the data will be retrieved from a secure cloud database. This information will then be saved on a local database on the phone, allowing offline use. Having the receipts stored in the cloud allows for access on multiple devices.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @* How it works *@
+        <div class="container d-flex align-items-center my-5">
+            <div class="col d-flex flex-column justify-content-between">
+                <div class="row text-center my-4">
+                    <h1 class="text-decoration-underline" style="color: #fcd542;">How it works</h1>
+
+                    <img src="~/img/Pop/flow.png" class="w-75 d-flex mx-auto my-5" />
+
+                    <div class="my-3">
+                        <p class="text-center"> We used a MySQL Database on a virtual XOA MySQL Server which communicates with our web client via PHP.
+                        </p>
+
+                        <p class="text-center">First, the POS system generates the data to be printed onto a receipt via the stored information and the items scanned. This data which is generated by the POS system is then made available to be printed physically or to be 'PoP'd' by an additional user of the PoP app. In this 'PoP' transaction the POS system will convert the receipt data into a readable format for our PHP Web Service to handle and insert into our MySQL Server. </p>
+
+                        <p class="text-center">Meanwhile the POS system also sends some basic receipt information to the PoP device with a UUID through NFC to identify the full receipt information from our database. This had to be done as NFC has a limit on how many bytes can be transferred which we foresaw as a possible issue in the future with receipts possible having to much information on them to be transferred correctly. When an internet connection is available on click of the 'PoP'd' receipt, the userid is connected to the receipt containing the corresponding UUID to display all of the receipt information in its entirety. </p>
+
+                        <p class="text-center">All data pulled from our web service is requested from our MySQL database and is returned in JSON format for our PoP app to read, interpret and use accordingly. PHP functions are requested by our PoP app and will do things like create users, search by parameters and pull all relevant receipt information.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @* Database Schema *@
+        <div class="container d-flex align-items-center my-5">
+            <div class="col d-flex flex-column justify-content-between">
+                <div class="row text-center">
+                    <h1 class="text-decoration-underline my-4" style="color: #fcd542;">Database Schema</h1>
+
+                    <img src="~/img/Pop/DBSchema.png" class="d-flex mx-auto my-5" style="width: 800px;" />
+                </div>
+            </div>
+        </div>
+
+        @* Carousel *@
+        <div class="container-lg d-flex align-items-center my-5">
+            <div class="row">
+                <h1 class="text-decoration-underline text-center my-4" style="color: #fcd542;">Walkthrough</h1>
+                <div id="carouselExampleIndicators" class="mb-5 carousel text-white slide rounded rounded-3" style="background-color: #537bf9;" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                    </div>
+
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row w-75 d-flex mx-auto m-5">
+                                <div class="col-4 d-flex justify-content-center"><img src="~/img/Pop/Carousel/pop-login1.png" class="d-block w-75"></div>
+                                <div class="col-4 text-center my-auto"><p class="fs-5">Register a PoP account and login securely on each visit with Biometric Authentication</p></div>
+                                <div class="col-4 d-flex justify-content-center"><img src="~/img/Pop/Carousel/bio.png" class="d-block w-75"></div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="row w-75 d-flex mx-auto m-5">
+                                <div class="col-4 d-flex justify-content-center">
+                                    <img src="~/img/Pop/Carousel/home.png" class="d-block w-75">
+                                </div>
+                                <div class="col-4 text-center my-auto">
+                                    <div class="row mb-2">
+                                        <p class="fs-5">View all your collected & virtual receipts with full receipt data</p>
+                                    </div>
+                                    <div class="row">
+                                        <p class="fs-5">Share these virtual receipts with third parties in PDF, CSV or PNG formats</p>
+                                    </div>
+                                </div>
+                                <div class="col-4 d-flex justify-content-center"><img src="~/img/Pop/Carousel/receipt.png" class="d-block w-75"></div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="row w-75 d-flex mx-auto m-5">
+                                <div class="col-4 d-flex justify-content-center"><img src="~/img/Pop/Carousel/folders.png" class="d-block w-75"></div>
+                                <div class="col-4 text-center my-auto">
+                                    <div class="row mb-2">
+                                        <p class="fs-5">Create personalised folders to keep virtual recipes organised</p>
+                                    </div>
+                                    <div class="row">
+                                        <p class="fs-5">Export entire folders for quick and easy recipt sharing</p>
+                                    </div>
+                                </div>
+                                <div class="col-4 d-flex justify-content-center"><img src="~/img/Pop/Carousel/Folder.png" class="d-block w-75"></div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="row w-75 d-flex justify-content-center mx-auto m-5">
+                                <div class="col-4 d-flex justify-content-center"><img src="~/img/Pop/Carousel/location.png" class="d-block w-75"></div>
+                                <div class="col-4 text-center my-auto"><p class="fs-5">View athe exact store and location of where you PoP'd your receipt with Google Maps</p></div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="row w-75 d-flex mx-auto m-5">
+                                <div class="col-4 d-flex justify-content-center"><img src="~/img/Pop/Carousel/date.png" class="d-block w-75"></div>
+                                <div class="col-4 text-center my-auto"><p class="fs-5">Find your virtual receipts in a fast and efficient manner by searching by item names, or between dates</p></div>
+                                <div class="col-4 d-flex justify-content-center"><img src="~/img/Pop/Carousel/tag.png" class="d-block w-75"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        @* Meet the team *@
+        <div class="container d-flex align-items-center my-5">
+            <div class="col">
+                <h1 class="text-decoration-underline text-center my-4" style="color: #fcd542;">Meet the team!</h1>
+                <p class="text-center fs-5 mb-5">
+                    PoP (Proof of Purchase) was created for my fourth year project. The team consisted of 4 members.
+                </p>
+
+                <div class="row my-3">
+                    <p class="col-8 d-flex my-auto">
+                        Hey, I'm Adrian. My primary role for PoP was logistic front-end development. I handled user interaction with the app, provided the NFC interaction between customer and merchant and added additional security with the use of biometric authentication. Additionally I created the mock POS system for testing and demoing purposes.
+                    </p>
+                    <div class="col-4 w-25 ratio ratio-1x1 p-0">
+                        <img src="~/img/Pop/Team/adrian-profile.png" class="rounded-circle" />
+                    </div>
+                </div>
+
+                <div class="row my-3">
+                    <div class="col-4 w-25 ratio ratio-1x1 p-0">
+                        <img src="~/img/Pop/Team/nick-profile.png" class="rounded-circle" />
+                    </div>
+                    <p class="col-8 d-flex my-auto">
+                        Hey, I'm Nick. My primary role was UI Design and implementaion for PoP, which meant I was responsible for desiging and implementing the user interface for PoP. My secondary role was front-end developer, I was responsible for some of the export, search and geo location map features.
+                    </p>
+                </div>
+
+                <div class="row my-3">
+                    <p class="col-8 d-flex my-auto">
+                        Hey, I'm Sean, I'm Scrum Master and Lead back-end developer for PoP. I have been Class Rep for many years and partook in an intensive coding project in Lens, Frnace with an international team.
+                    </p>
+                    <div class="col-4 w-25 ratio ratio-1x1 p-0">
+                        <img src="~/img/Pop/Team/sean-profile.png" class="rounded-circle" />
+                    </div>
+                </div>
+
+                <div class="row my-3">
+                    <div class="col-4 w-25 ratio ratio-1x1 p-0">
+                        <img src="~/img/Pop/Team/aoife-profile.png" class="rounded-circle" />
+                    </div>
+                    <p class="col-8 d-flex my-auto">
+                        Hey, I'm Aoife! My primary technical role for PoP was cloud database and server administrator. I was also Team Lead for the project, and carried out user testing & product owner duties.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        @* Links & Resources *@
+        <div class="container my-5">
+            <div class="col d-flex flex-column justify-content-between my-4" style="height: 65vh;">
+                <div class="row text-center">
+                    <h1 class="text-decoration-underline" style="color: #fcd542;">Links & Resources</h1>
+                </div>
+
+                <div class="row">
+                    <div class="embed-responsive embed-responsive-16by9 d-flex justify-content-center">
+                        <iframe height="315" width="560" src="https://www.youtube.com/embed/2abOLLamN0w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="row w-75 mx-auto">
+                    <a href="https://github.com/UnBottino/PoP" target="_blank" class="col-4 text-decoration-none text-black">
+                        <div class="row mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="black" class="bi bi-github" viewBox="0 0 16 16">
+                                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                            </svg>
+                        </div>
+                        <div class="row">
+                            <h4 class="text-center">PoP Repo</h4>
+                        </div>
+                    </a>
+
+                    <a asp-area="" asp-controller="Projects" asp-action="PopJournal" target="_blank" class="col-4 text-decoration-none text-black">
+                        <div class="row mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-journal-text" viewBox="0 0 16 16">
+                                <path d="M5 10.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z" />
+                                <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
+                                <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" />
+                            </svg>
+                        </div>
+                        <div class="row">
+                            <h4 class="text-center">Technical Journal</h4>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/UnBottino/PoP-dummy-shop" target="_blank" class="col-4 text-decoration-none text-black">
+                        <div class="row mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="black" class="bi bi-github" viewBox="0 0 16 16">
+                                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                            </svg>
+                        </div>
+                        <div class="row">
+                            <h4 class="text-center">Dummy Shop Repo</h4>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>      
+    </div>
+</div>
