@@ -43,7 +43,7 @@ namespace Portfolio.Controllers
             if (ModelState.IsValid)
             {
                 var myEmail = new MailAddress("unbottino@gmail.com", "Adrian Collins");
-                const string myPassword = "sjxcjpafyjluhkfy";
+                const string myPassword = "password";
                 const string sub = "Portfolio Email";
 
                 var body = model.FirstName + " ";
