@@ -1,26 +1,306 @@
-﻿@{
+﻿@model ContactMessage
+
+@{
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
     ViewData["Title"] = "Home Page";
 }
 
-<div class="position-absolute top-50 start-50 translate-middle w-75">
-    <div class="row">
-        <div class="col ms-5 my-auto">
-            <h1 class="display-4 fw-bold font-monospace">Hi,</h1>
-            <h1 class="display-4 fw-bold font-monospace">I'm <b class="text-primary font-monospace">Adrian</b></h1>
-            <h1 class="display-4 fw-bold font-monospace">Developer</h1>
-        </div>
-        <div class="col d-flex justify-content-center my-auto">
-            <img src="~/img/avatar.png" class="w-50" />
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
         </div>
     </div>
-    <div class="row">
-        <div class="mt-5 ms-5 mb-2">
-            <a href="https://www.reddit.com/r/wallagram/" target="_blank" class="me-5 text-decoration-none">
-                <img src="~/img/Logos/github.png" style="max-width: 4vw; min-width: 48px;" />
+</div>
+
+@* Text and Image *@
+<section class="container mb-5 mt-5">
+    <div class="row d-flex pb-lg-0 " style="padding-top: 10vw;">
+        <div class="col-5 col-lg-4 offset-lg-1 col-md-4 offset-md-1">
+            <div class="ms-5">
+                <h1 class="fs-3">I'm <b class="display-3 fw-bold text-purple">Adrian</b>,</h1>
+                <h1 class="fs-3">A Graduate Developer</h1>
+            </div>
+        </div>
+        <div class="col-5 offset-2 col-lg-4 offset-lg-2 col-md-4 d-flex">
+            <img src="~/img/index/laptop-purple2.png" class="mx-auto" style="width:100%; height:auto;" />
+        </div>
+    </div>
+</section>
+
+@* About *@
+<section id="about" class="container py-5">
+    <div row mx-5>
+        <h1 class="ms-5 display-5 mb-4" style="text-decoration: underline; text-decoration-color: #9100ef;">About</h1>
+        <div class="col-10 offset-1 text-center text-grey">
+            <p>
+                I'm a graduate with a Bachelor of Science degree in Computer Science, passionate about exploring the endless possibilities of technology. I've delved into a diverse range of projects spanning from Android development to ASP.NET MVC and Python programming. Continuously driven by curiosity, I thrive on learning new languages, frameworks, and exploring cloud databases to stay ahead in this ever-evolving field.
+            </p>
+            <p>
+                Efficiency is at the core of my work ethic. I enjoy streamlining tasks and enhancing productivity, whether it's through automating simple processes on my PC or experimenting with hardware projects like crafting a custom volume slider to optimize audio management. My goal is to leverage my skills and experiences to contribute meaningfully to the tech community and beyond.
+            </p>
+        </div>
+    </div>
+</section>
+
+@* Skills *@
+<section id="skills" class="container py-5 text-center">
+    <h1 class="display-5 mb-4" style="text-decoration: underline; text-decoration-color: #9100ef;">My Skills</h1>
+    
+    <div class="row row-cols-lg-6 row-cols-md-4 row-cols-3 dark-text">
+        @{var count = 0;}
+        @foreach (var skill in ViewBag.Skills)
+        {
+            <div class="col mx-auto">
+                <div class="shadow card mt-3 mx-auto skill" style="width: x10rem; height: 12rem; border-radius: 25px;">
+                    <div class="my-auto">
+                        <i class="devicon-@(skill)-plain @(skill == "" ? "" : "colored") icon d-block" style="font-size: 5em;"></i>
+                        <p class="m-0 mt-3 fs-5">@ViewBag.SkillsFormatted[count]</p>
+                    </div>
+                </div>
+            </div>
+
+            count++;
+        }
+    </div>
+</section>
+
+@* Experience *@
+<section id="experience" class="container-lg px-5 px-lg-0 py-5 mx-auto">
+    <h1 class="display-5 text-center mb-4" style="text-decoration: underline; text-decoration-color: #9100ef;">Experience</h1>
+    <div class="row row-cols-1 row-cols-md-2 mx-auto gy-3 light-text">
+        
+        @* Climote *@
+        <div class="col">
+            <div class="card shadow bg-light-grey h-100" style="border-radius: 10px;">
+                <img src="~/img/experience/climote.png" class="card-img-top bg-light" style="height: 175px; object-fit: scale-down; border-top-left-radius: 10px; border-top-right-radius: 10px;" alt="Image of Climote logo" />
+                <div class="card-body px-5 pt-5 text-grey">
+                    <div class="card-title">
+                        <h4>Intern Developer</h4>
+                        <h5>Climote, Co. Louth</h5>
+                    </div>
+                    <div class="card-text">
+                        <p>
+                            During my internship at Climote in Dundalk, Co. Louth, I tackled a variety of projects that enhanced my skills as a software developer.
+                        </p>
+                        <p>
+                            I debugged and updated an essential C# tool for diagnosing Climote hubs, revamped the company's PHP and WordPress website, integrating new products and automating email follow-ups. I also developed a tool to parse signal data for a new device and plotted results in Excel graphs. Additionally, I crafted an instruction booklet for an upcoming thermostat and prototyped animation ideas for a mobile application.
+                        </p>
+
+                        <p>
+                            These experiences honed my problem-solving abilities and creativity in a professional setting.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @* IUT De Lens *@
+        <div class="col">
+            <div class="card shadow bg-light-grey mb-5 h-100" style="border-radius: 10px;">
+                <img src="~/img/experience/iut.png" class="card-img-top bg-light" style="height: 175px; object-fit: scale-down; border-top-left-radius: 10px; border-top-right-radius: 10px;" alt="Image of IUT De Lens logo" />
+                <div class="card-body px-5 pt-5 text-grey">
+                    <div class="card-title">
+                        <h4>College Collaboration</h4>
+                        <h5>IUT De Lens, France</h5>
+                    </div>
+                    <div class="card-text">
+                        <p>
+                            I participated in a collaboration project where, over two immersive weeks, my team thoroughly explored the React library and honed our skills in utilizing Node.js to interface with a MongoDB database.
+                        </p>
+                        <p>
+                            Through video calls, our multinational team, comprising two Irish, two French, and a single Polish student, held brainstorming sessions, planning the site design, roadmap and team roles.
+                        </p>
+                        <p>
+                            Taking our newfound knowledge, we flew over to Lens, France, to meet the team  in person. With just five intense days at our disposal, we collectively crafted a website showcasing the unique attractions from each of our respective countries.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@* CV Download *@
+<section id="cv" class="text-center">
+    <div class="parallax d-flex">
+        <div class="col my-auto light-text p-5">
+            <h1 class="display-5 mb-3">CHECK OUT MY RÉSUMÉ!</h1>
+
+            <a asp-controller="Home" asp-action="AdrianCollins_2024" target="_blank" class="text-decoration-none">
+                <div class="mx-auto btn-cv" style="width: 180px">
+                    <span>Grab a Copy</span>
+                </div>
             </a>
-            <a href="https://www.reddit.com/r/wallagram/" target="_blank">
-                <img src="~/img/Logos/linkedin.png" style="max-width: 4vw; min-width: 48px;"/>
-            </a>
+        </div>
+    </div>
+</section>
+
+@* Projects *@
+<section id="projects" class="container-lg px-5 px-lg-0 pt-5">
+    <h1 class="display-5 mb-3" style="text-decoration: underline; text-decoration-color: #9100ef;">Projects</h1>
+
+    @* Recipe Book *@
+    <a asp-controller="Projects" asp-action="RecipeBook">
+        <div class="row shadow project-box hover-overlay">
+            <div class="col-md-6 col-sm-12 d-flex">
+                <img src="~/img/projects/recipebook_home.png" class="mx-auto w-100" alt="" />
+            </div>
+            <div class="col-md-6 col-sm-12 my-auto px-md-5 px-sm-0">
+                <div class="pt-3 d-flex">
+                    <div class="mx-auto">
+                        <h6>Recipe Book</h6>
+                        <p>An MVC Website built through ASP.Net 8.0 allowing users to view recipes. Admins can login to create or edit recipes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    @* Wallagram *@
+    <a asp-controller="Projects" asp-action="Wallagram">
+        <div class="row shadow project-box">
+            <div class="col-md-6 col-sm-12 my-auto px-md-5 px-sm-0">
+                <div class="pt-3 d-flex">
+                    <div class="mx-auto">
+                        <h6>Wallagram</h6>
+                        <p>An Android app that allows users to update their phones Home screen / Lock screen wallpaper periodically from their chosen subreddit.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12 d-flex" style="">
+                <img src="~/img/projects/wallagram_home.png" class="mx-auto w-25" alt="" />
+                <img src="~/img/projects/wallagram_settings.png" class="mx-auto w-25" alt="" />
+            </div>
+        </div>
+    </a>
+
+    @* Interval Timer *@
+    <a asp-controller="Projects" asp-action="IntervalTimer">
+        <div class="row shadow project-box">
+            <div class="col-md-6 col-sm-12 d-flex">
+                <img src="~/img/projects/interval_timer_workout.png" class="mx-auto w-100" alt="" />
+            </div>
+            <div class="col-md-6 col-sm-12 my-auto px-md-5 px-sm-0">
+                <div class="pt-3 d-flex">
+                    <div class="mx-auto">
+                        <h6>Interval Timer</h6>
+                        <p>An MVC website built using ASP.NET Core allowing users to setup an interval timer for HIIT workouts as used in boxing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    @* PoP *@
+    <a asp-controller="Projects" asp-action="Pop">
+        <div class="row shadow project-box mb-0">
+            <div class="col-md-6 col-sm-12 my-auto px-md-5 px-sm-0">
+                <div class="pt-3 d-flex">
+                    <div class="mx-auto">
+                        <h6>PoP</h6>
+                        <p>An Android app that virtualises the storage, organisation and sharing of receipts using NFC technology. PoP aims to help users 'future proof' their receipt management process in a digital era, with fast and easy in-app features.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12 d-flex" style="">
+                <img src="~/img/projects/pop_home.png" class="mx-auto w-25" alt="" />
+                <img src="~/img/projects/pop_reciept.png" class="mx-auto w-25" alt="" />
+            </div>
+        </div>
+    </a>
+</section>
+
+@* Contact Me *@
+<section id="contact" class="container-lg px-5 px-lg-0 py-5 text-center d-flex" style="height:500px;">
+    <div class="m-auto">
+        <i class="fa-regular fa-paper-plane mb-3" style="font-size: 50px"></i>
+        <h1 class="display-5">Get in touch</h1>
+        <h5 class="mb-3">Have any questions? Send me an email!</h5>
+        
+        <a class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#contactModal">
+            <div class="mx-auto btn-contact" style="width: 180px">
+                <span>Contact me</span>
+            </div>
+        </a>
+    </div>
+</section>
+
+<!-- Modal -->
+<div id="contactModal" class="modal fade" tabindex="-1" data-bs-backdrop="static" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="contactModalLabel">Contact me</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="col my-auto">
+                    <div class="row">
+                        <form id="contact-form">
+                            <div asp-validation-summary="ModelOnly"></div>
+                            <div class="mb-3">
+                                <div class="form-floating">
+                                    <input asp-for="Email" type="email" class="form-control" id="floatingEmail" placeholder="Email">
+                                    <label for="floatingEmail">Email</label>
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="form-floating">
+                                    <textarea asp-for="Message" class="form-control" placeholder="Write a message..." id="floatingTextarea" style="height: 140px"></textarea>
+                                    <label for="floatingTextarea">Write a message...</label>
+                                    <span asp-validation-for="Message" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <a id="submit-modal" class="text-decoration-none text-center" data-bs-dismiss="modal">
+                                <div class="mx-auto btn-contact" style="width: 180px">
+                                    <span>Send</span>
+                                </div>
+                            </a>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 2 -->
+<div id="sentModal" class="modal fade" tabindex="-1" data-bs-backdrop="static" aria-labelledby="sentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="sentModalLabel">Email sent</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="col my-auto">
+                    <div class="row">
+                        <a class="text-decoration-none text-center" data-bs-dismiss="modal">
+                            <div class="mx-auto btn-contact" style="width: 180px">
+                                <span>Close</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

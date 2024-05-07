@@ -7,8 +7,56 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\fonts\Inter-Black.ttf" />
+    <None Include="wwwroot\fonts\Inter-BlackItalic.ttf" />
+    <None Include="wwwroot\fonts\Inter-Bold.ttf" />
+    <None Include="wwwroot\fonts\Inter-BoldItalic.ttf" />
+    <None Include="wwwroot\fonts\Inter-ExtraBold.ttf" />
+    <None Include="wwwroot\fonts\Inter-ExtraBoldItalic.ttf" />
+    <None Include="wwwroot\fonts\Inter-ExtraLight.ttf" />
+    <None Include="wwwroot\fonts\Inter-ExtraLightItalic.ttf" />
+    <None Include="wwwroot\fonts\Inter-Italic.ttf" />
+    <None Include="wwwroot\fonts\Inter-Light.ttf" />
+    <None Include="wwwroot\fonts\Inter-LightItalic.ttf" />
+    <None Include="wwwroot\fonts\Inter-Medium.ttf" />
+    <None Include="wwwroot\fonts\Inter-MediumItalic.ttf" />
+    <None Include="wwwroot\fonts\Inter-Regular.ttf" />
+    <None Include="wwwroot\fonts\Inter-SemiBold.ttf" />
+    <None Include="wwwroot\fonts\Inter-SemiBoldItalic.ttf" />
+    <None Include="wwwroot\fonts\Inter-Thin.ttf" />
+    <None Include="wwwroot\fonts\Inter-ThinItalic.ttf" />
+    <None Include="wwwroot\fonts\InterDisplay-Black.ttf" />
+    <None Include="wwwroot\fonts\InterDisplay-BlackItalic.ttf" />
+    <None Include="wwwroot\fonts\InterDisplay-Bold.ttf" />
+    <None Include="wwwroot\fonts\InterDisplay-BoldItalic.ttf" />
+    <None Include="wwwroot\fonts\InterDisplay-ExtraBold.ttf" />
+    <None Include="wwwroot\fonts\InterDisplay-ExtraBoldItalic.ttf" />
+    <None Include="wwwroot\fonts\InterDisplay-ExtraLight.ttf" />
+    <None Include="wwwroot\fonts\InterDisplay-ExtraLightItalic.ttf" />
+    <None Include="wwwroot\fonts\InterDisplay-Italic.ttf" />
+    <None Include="wwwroot\fonts\InterDisplay-Light.ttf" />
+    <None Include="wwwroot\fonts\InterDisplay-LightItalic.ttf" />
+    <None Include="wwwroot\fonts\InterDisplay-Medium.ttf" />
+    <None Include="wwwroot\fonts\InterDisplay-MediumItalic.ttf" />
+    <None Include="wwwroot\fonts\InterDisplay-Regular.ttf" />
+    <None Include="wwwroot\fonts\InterDisplay-SemiBold.ttf" />
+    <None Include="wwwroot\fonts\InterDisplay-SemiBoldItalic.ttf" />
+    <None Include="wwwroot\fonts\InterDisplay-Thin.ttf" />
+    <None Include="wwwroot\fonts\InterDisplay-ThinItalic.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MailKit" Version="4.0.0" />
     <PackageReference Include="Microsoft.AspNet.WebPages" Version="3.2.9" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\lib\skills_formatted.txt">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties wwwroot_4lib_4bootstrap_4dist_4js_4bootstrap_1bundle_1js_1map__JsonSchema="" /></VisualStudio></ProjectExtensions>
 
 </Project>
