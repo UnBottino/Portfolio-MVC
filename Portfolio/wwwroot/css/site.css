@@ -204,7 +204,7 @@ a.nav-link {
 
 /* Download CV */
 .parallax {
-    background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('../img/woodenboards.jpg');
+    background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2) ), url('../img/cv_bg.jpg');
     min-height: 500px;
     background-attachment: fixed;
     background-position: center;
