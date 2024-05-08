@@ -231,76 +231,11 @@
         <i class="fa-regular fa-paper-plane mb-3" style="font-size: 50px"></i>
         <h1 class="display-5">Get in touch</h1>
         <h5 class="mb-3">Have any questions? Send me an email!</h5>
-        
-        <a class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#contactModal">
+
+        <a href="mailto:adriancollins59@live.com?&subject=PortfolioContact" target="_blank" class="text-decoration-none">
             <div class="mx-auto btn-contact" style="width: 180px">
                 <span>Contact me</span>
             </div>
         </a>
     </div>
 </section>
-
-<!-- Modal -->
-<div id="contactModal" class="modal fade" tabindex="-1" data-bs-backdrop="static" aria-labelledby="contactModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="contactModalLabel">Contact me</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="col my-auto">
-                    <div class="row">
-                        <form id="contact-form">
-                            <div asp-validation-summary="ModelOnly"></div>
-                            <div class="mb-3">
-                                <div class="form-floating">
-                                    <input asp-for="Email" type="email" class="form-control" id="floatingEmail" placeholder="Email">
-                                    <label for="floatingEmail">Email</label>
-                                    <span asp-validation-for="Email" class="text-danger"></span>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <div class="form-floating">
-                                    <textarea asp-for="Message" class="form-control" placeholder="Write a message..." id="floatingTextarea" style="height: 140px"></textarea>
-                                    <label for="floatingTextarea">Write a message...</label>
-                                    <span asp-validation-for="Message" class="text-danger"></span>
-                                </div>
-                            </div>
-
-                            <a id="submit-modal" class="text-decoration-none text-center" data-bs-dismiss="modal">
-                                <div class="mx-auto btn-contact" style="width: 180px">
-                                    <span>Send</span>
-                                </div>
-                            </a>
-
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Modal 2 -->
-<div id="sentModal" class="modal fade" tabindex="-1" data-bs-backdrop="static" aria-labelledby="sentModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="sentModalLabel">Email sent</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="col my-auto">
-                    <div class="row">
-                        <a class="text-decoration-none text-center" data-bs-dismiss="modal">
-                            <div class="mx-auto btn-contact" style="width: 180px">
-                                <span>Close</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
